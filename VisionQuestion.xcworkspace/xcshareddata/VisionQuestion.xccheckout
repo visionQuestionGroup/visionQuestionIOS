@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5F4C32E8-29DB-4C6E-8CB4-08BD66CB02D3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VisionQuestion</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8A0F99BF917805B5A5F729B70FC3A122103E2AED</key>
+		<string>https://github.com/visionQuestionGroup/iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VisionQuestion.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8A0F99BF917805B5A5F729B70FC3A122103E2AED</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/visionQuestionGroup/iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8A0F99BF917805B5A5F729B70FC3A122103E2AED</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8A0F99BF917805B5A5F729B70FC3A122103E2AED</string>
+			<key>IDESourceControlWCCName</key>
+			<string>visionQuestioniOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

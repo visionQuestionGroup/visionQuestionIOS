@@ -1,0 +1,13 @@
+# visionQuestion
+
+This app is a collaboration between iOS, Ruby, and Front End.  
+
+**Mobile App**
+
+Kyle's app features login and registration, which saves JSON data and sends it to the Ruby server.  After logging in, we can take a picture or play the game.
+
+When we take a picture, it runs the UIImagePicker delegate/protocol.  We use the built-in camera functions to take a picture, save it, and then pop to another View Controller.  We can add a Question to the picture here, and choose to take more pictures or finish.  The pictures are actually saved using S3, not on the Ruby server.
+
+After we finish taking pictures, we send the data set (an array of dictionaries where each dictionary contains keys/items for Image URL and Answer) to the Ruby server.  
+
+The final version of the app will allow you to actually play the game on the iPhone as well, although we're primarily interested in playing the game on the web app.

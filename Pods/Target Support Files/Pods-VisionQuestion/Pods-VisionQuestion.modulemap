@@ -1,0 +1,6 @@
+framework module Pods_VisionQuestion {
+  umbrella header "Pods-VisionQuestion-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -15,6 +15,8 @@ class MainMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
     }
 
     @IBAction func takePictures(sender: AnyObject) {

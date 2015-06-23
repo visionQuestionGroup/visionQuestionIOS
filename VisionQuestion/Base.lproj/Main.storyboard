@@ -654,7 +654,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess the image. Obtain glory." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JII-0d-FfN">
-                                <rect key="frame" x="16" y="28" width="433" height="35"/>
+                                <rect key="frame" x="16" y="28" width="475" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="yU9-2g-QGI"/>
                                 </constraints>
@@ -704,10 +704,10 @@
                                     <action selector="answerButtonPressed:" destination="auc-Xp-9cK" eventType="touchUpInside" id="3ph-8e-L9u"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Score: 9001" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ns4-BC-edg">
-                                <rect key="frame" x="457" y="28" width="133" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 9001" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ns4-BC-edg">
+                                <rect key="frame" x="499" y="28" width="91" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="133" id="3vD-g1-vEJ"/>
+                                    <constraint firstAttribute="width" constant="91" id="3vD-g1-vEJ"/>
                                     <constraint firstAttribute="height" constant="35" id="Loi-XI-7CD"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="MfT-pE-srl"/>
                                 </constraints>

@@ -146,7 +146,7 @@ class RailsRequest: NSObject {
             
             "method" : "POST",
             "endpoint" : "/guesses",
-            "parameters" : [
+            "query" : [
                 
                 "post_id":postId,
                 "guess":guess
@@ -167,25 +167,37 @@ class RailsRequest: NSObject {
         
     }
     
-    func getPosts(completion: () -> Void) {
+    func getPlayablePosts(completion: (posts: [AnyObject]) -> Void) {
         
-        var postID: Int?
-        var imageURL: String?
-        var answer: String?
         
         var info = [
             
             "method" : "GET",
-            "endpoint" : "/posts/user",
+            "endpoint" : "/posts/all/playable",
             
-            ] as [String: AnyObject]
+            "query" : [
+            
+                "page" : 1
+            
+            ]
+            
+        ] as [String: AnyObject]
         
         requestWithInfo(info, andCompletion: { (responseInfo) -> Void in
             
             
             println(responseInfo)
             
-            println("This section is indeed running.")
+            if let posts = responseInfo as? [AnyObject] {
+                
+                completion(posts: posts)
+                
+            } else {
+                
+                completion(posts: [])
+                
+            }
+            
             
         })
         
@@ -216,9 +228,28 @@ class RailsRequest: NSObject {
         
     }
     
-    func requestWithInfo(info: [String:AnyObject], andCompletion completion: ((responseInfo: [String:AnyObject]?) -> Void)?) {
+    func requestWithInfo(info: [String:AnyObject], andCompletion completion: ((responseInfo: AnyObject?) -> Void)?) {
         
-        let endpoint = info["endpoint"] as! String
+        var endpoint = info["endpoint"] as! String
+        
+        // query parameters for GET request
+        if let query = info["query"] as? [String:AnyObject] {
+            
+            var first = true
+            
+            for (key,value) in query {
+                
+                // choose sign if it is first ? else :
+                var sign = first ? "?" : "&"
+                
+                endpoint = endpoint + "\(sign)\(key)=\(value)"
+                
+                // set first the first time it runs
+                first = false
+                
+            }
+            
+        }
         
         if let url = NSURL(string: API_URL + endpoint) {
             
@@ -258,7 +289,8 @@ class RailsRequest: NSObject {
             
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
                 
-                if let json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) as? [String:AnyObject] {
+                
+                if let json: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil) {
                     
                     completion?(responseInfo: json)
                     

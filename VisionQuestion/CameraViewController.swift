@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AmazonS3RequestManager
 import AFNetworking
 import AFAmazonS3Manager
 

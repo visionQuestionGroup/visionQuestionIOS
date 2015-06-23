@@ -8,7 +8,7 @@
 
 import UIKit
 
-var countNumber = 1
+var countNumber = 0
 var globalScore = 0
 
 class PlayGameViewController: UIViewController {
@@ -26,19 +26,71 @@ class PlayGameViewController: UIViewController {
     var timer = NSTimer()
     var seconds = 0
     var count = 0
+
+    var gameImage: UIImage?
+    var gameImageObject: AnyObject?
+    var gameImageDictionary = [:]
+    var gameImageURLString: String?
     
+    // local array
+    var gameInfo = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
 
-        RailsRequest.session().getPosts { () -> Void in
+        RailsRequest.session().getPlayablePosts { (posts) -> Void in
+            
+            // set a local array = posts
+            // reset tableview
+            
+            self.gameInfo = posts
+            
+            self.gameImageObject = self.gameInfo[0]["post_info"]!
+            
+            self.gameImageDictionary = self.gameImageObject as! NSDictionary
+            
+            self.gameImageURLString = self.gameImageDictionary["image_url"] as? String
+                        
+            // Create image from URL string
+            let imageURL = NSURL(string: self.gameImageURLString!)
+            
+            let imageDataFromURL = NSData(contentsOfURL: imageURL!)
+            
+            let newImageFromData = UIImage(data: imageDataFromURL!)
+            
+            println("Play Game Test 6: \(newImageFromData)")
+            
+            self.gameImage = newImageFromData!
+            
+            self.currentGamePic.image = self.gameImage
             
         }
         
-         setupGame()
+            
+        
+//        testing 
+//         setupGame()
+     
+//        if let url = NSURL(gameInfo[countNumber]["image_url"]) as? String {
+        
+//            if let data = NSData(contentsOfURL: url!)
+
+            
+            
+        
+        
+        
         
     }
+    
+//    func getImageFromURL(url: URL) {
+//        
+//        NSURLRequest
+//        
+//        
+//        
+//    }
     
     func setupGame() {
         

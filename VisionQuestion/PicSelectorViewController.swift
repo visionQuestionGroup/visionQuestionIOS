@@ -28,7 +28,6 @@ class PicSelectorViewController: UIViewController, UITextFieldDelegate {
     
     var imageURL: String!
     
-
     
     @IBOutlet weak var newlyChosenPhoto: UIImageView!
     
